@@ -1,0 +1,82 @@
+//
+//  Created by TODO http://www.lightcolors.cn on 16/8/7.
+//
+//  TODO base:
+//
+//
+.f-border {
+  border: 1px solid #333;
+}
+
+.border (@bgcolor) {
+  & {
+    &, &-l, &-r, &-t, &-b, &-lr, &-tb {
+      border: 1px solid transparent !important;
+      position: relative;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  &::after {
+    background-image: linear-gradient(90deg, @bgcolor, @bgcolor 50%, transparent 50%),
+    linear-gradient(90deg, @bgcolor, @bgcolor 50%, transparent 50%),
+    linear-gradient(0deg, @bgcolor, @bgcolor 50%, transparent 50%),
+    linear-gradient(0deg, @bgcolor, @bgcolor 50%, transparent 50%);
+    background-size: 1px 100%, 1px 100%, 100% 1px, 100% 1px;
+    background-position: left, right, top, bottom;
+    background-repeat: no-repeat;
+  }
+  &-l::after {
+    background-image: linear-gradient(90deg, @bgcolor, @bgcolor 50%, transparent 50%);
+    background-size: 1px 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+  &-r::after {
+    background-image: linear-gradient(90deg, @bgcolor, @bgcolor 50%, transparent 50%);
+    background-size: 1px 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+  &-lr::after {
+    background-image: linear-gradient(90deg, @bgcolor, @bgcolor 50%, transparent 50%),
+    linear-gradient(90deg, @bgcolor, @bgcolor 50%, transparent 50%);
+    background-size: 1px 100%, 1px 100%;
+    background-position: left, right;
+    background-repeat: no-repeat;
+  }
+  &-t::after {
+    background-image: linear-gradient(0deg, @bgcolor, @bgcolor 50%, transparent 50%);
+    background-size: 100% 1px;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+  &-b::after {
+    background-image: linear-gradient(0deg, @bgcolor, @bgcolor 50%, transparent 50%);
+    background-size: 100% 1px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+  &-tb::after {
+    background-image: linear-gradient(0deg, @bgcolor, @bgcolor 50%, transparent 50%),
+    linear-gradient(0deg, @bgcolor, @bgcolor 50%, transparent 50%);
+    background-size: 100% 1px, 100% 1px;
+    background-position: top, bottom;
+    background-repeat: no-repeat;
+  }
+
+}
+
+@media only screen and (min-device-pixel-ratio: 2) {
+
+}
+
+.f-border-fix {
+  .border(#333)
+}

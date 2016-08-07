@@ -1,0 +1,69 @@
+.f-border {
+  border: 1px solid #333;
+}
+.f-border-fix,
+.f-border-fix-l,
+.f-border-fix-r,
+.f-border-fix-t,
+.f-border-fix-b,
+.f-border-fix-lr,
+.f-border-fix-tb {
+  border: 1px solid transparent !important;
+  position: relative;
+}
+.f-border-fix::after,
+.f-border-fix-l::after,
+.f-border-fix-r::after,
+.f-border-fix-t::after,
+.f-border-fix-b::after,
+.f-border-fix-lr::after,
+.f-border-fix-tb::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.f-border-fix::after {
+  background-image: linear-gradient(90deg, #333, #333 50%, transparent 50%), linear-gradient(90deg, #333, #333 50%, transparent 50%), linear-gradient(0deg, #333, #333 50%, transparent 50%), linear-gradient(0deg, #333, #333 50%, transparent 50%);
+  background-size: 1px 100%, 1px 100%, 100% 1px, 100% 1px;
+  background-position: left, right, top, bottom;
+  background-repeat: no-repeat;
+}
+.f-border-fix-l::after {
+  background-image: linear-gradient(90deg, #333, #333 50%, transparent 50%);
+  background-size: 1px 100%;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+.f-border-fix-r::after {
+  background-image: linear-gradient(90deg, #333, #333 50%, transparent 50%);
+  background-size: 1px 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+.f-border-fix-lr::after {
+  background-image: linear-gradient(90deg, #333, #333 50%, transparent 50%), linear-gradient(90deg, #333, #333 50%, transparent 50%);
+  background-size: 1px 100%, 1px 100%;
+  background-position: left, right;
+  background-repeat: no-repeat;
+}
+.f-border-fix-t::after {
+  background-image: linear-gradient(0deg, #333, #333 50%, transparent 50%);
+  background-size: 100% 1px;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+.f-border-fix-b::after {
+  background-image: linear-gradient(0deg, #333, #333 50%, transparent 50%);
+  background-size: 100% 1px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+.f-border-fix-tb::after {
+  background-image: linear-gradient(0deg, #333, #333 50%, transparent 50%), linear-gradient(0deg, #333, #333 50%, transparent 50%);
+  background-size: 100% 1px, 100% 1px;
+  background-position: top, bottom;
+  background-repeat: no-repeat;
+}

@@ -9,4 +9,24 @@
 @base-px: 1px*@base-font-size;
 @base-rem: 1rem*@base-font-size;
 
-@view-320: ceil(320/640*@base-px)
+@view-320: ceil(320/640*@base-px);
+@view-480: ceil(480/640*@base-px);
+@view-640: ceil(640/640*@base-px);
+
+@media all and (min-width: 300px) {
+  html {
+    font-size: @view-320;
+  }
+}
+
+@media all and (min-width: 480px) {
+  html {
+    font-size: @view-480;
+  }
+}
+
+@media all and (min-width: 640px) {
+  html {
+    font-size: @view-640;
+  }
+}
