@@ -1,0 +1,25 @@
+{
+  "name": "fui",
+  "description": "fui webapp 移动端",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Codecss <jiangwei.john@foxmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "fui",
+    "webapp",
+    "UI"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "zepto": "^1.1.6"
+  }
+}
